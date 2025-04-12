@@ -1,5 +1,5 @@
 """
-URL configuration for my_project project.
+URL configuration for codestar project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -14,14 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
-from django.urls import path, include
-from hello_world import views as index_views
-from about import views as about_views
+from django.urls import path
+from blog import views as blog_views
 
 urlpatterns = [
-    path('hello/',  index_views.index, name='index'),
-    path('about/', about_views.about_me, name='about'),
     path('admin/', admin.site.urls),
+    path('blog/', blog_views.my_blog, name="blog"), # the app urls are loaded as the main urls
 ]
